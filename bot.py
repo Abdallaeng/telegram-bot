@@ -9,13 +9,12 @@ from telegram.ext import (
 )
 from telegram.error import Forbidden, BadRequest
 
-# ================= إعدادات المسارات =================
-# خليه يعمل على السيرفر بدون مسارات ويندوز
+# ================= إعدادات الملفات =================
 DATA_FILE = "file.xlsx"
 USER_FILE = "users.xlsx"
 
 # 🔐 رقم الأدمن
-ADMIN_ID = 7189695330
+ADMIN_ID = 7189695330  
 
 # ================= تحميل البيانات =================
 def load_data():
@@ -159,9 +158,11 @@ async def broadcast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ================= تشغيل البوت =================
 def main():
-    token = os.getenv("BOT_TOKEN")
-    if not token:
-        print("❌ BOT_TOKEN غير موجود!")
+    # 🔴 ضع التوكن هنا
+    token = "7939588931:AAFm-k1KjBpPg2cxpOfNERDgRrmucQIJ16Q"
+
+    if not token or "PUT_YOUR_NEW_TOKEN_HERE" in token:
+        print("❌ حط التوكن الصحيح داخل الكود")
         return
 
     app = ApplicationBuilder().token(token).build()
